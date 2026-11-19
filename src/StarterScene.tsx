@@ -5,20 +5,27 @@ import { SceneTransition } from "./sceneTransition";
 import { Stage, At, Slab, Chip, Label, Bar, camPath, pop, glide, ramp } from "./boldKit";
 
 /**
- * TEMPLATE: copy this file to start a new explainer.
+ * TEMPLATE: copy this file to start a new explainer. Replace this header with
+ * the real one (see the guide: references/recipes.md → "Scene header"):
  *
- * The pattern every boldKit scene follows:
- *   1. CUES: the frame (local to this scene, 60 fps) where each key word of
- *      the voiceover lands. In a real episode these come from word timestamps
- *      of the VO (whisper), so motion hits on the word. Placeholder values here.
- *   2. Beats: turn cues into 0→1 values with pop (lively, overshoots),
- *      glide (settled), or ramp (linear-ish, eased, between two frames).
- *   3. Camera: a camPath of keyframes; the world moves, the frame doesn't.
- *   4. Objects: <At p={[x, y, z]}> places things in the world. Text goes ON
- *      a Slab/Chip face so it can never drift off its shape.
+ * "<the VO lines this scene covers, verbatim>"
+ * <enter/exit: slide in from X, whoosh out to the faces>
  *
- * No titles, kickers or verdict lines. Objects carry their own labels and
- * captions carry the words.
+ *   1  <beat: what's on screen, what moves>   (cue: query)
+ *   2  <beat>                                 (cue: rows)
+ *   3  <beat>                                 (cue: score)
+ *   4  <beat>                                 (cue: winner)
+ *
+ * Code facts (<repo> @ <commit>): <file> <identifier/constant>, …
+ * Numbers: <source of each, or "no numbers on screen">.
+ *
+ * How it's built (every boldKit scene works this way):
+ *   CUES   frame (local, 60 fps) where each key VO word lands. From
+ *          tools/vo_cues.py in a real video; placeholders here.
+ *   beats  cues → 0..1 values with pop (arrives, overshoots), glide (travels),
+ *          ramp (eased progress).
+ *   camera one camPath keyed to cues; hold on each beat, one move between.
+ *   objects <At p={[x, y, z]}> places things; text goes ON a Slab/Chip face.
  */
 const CUES = { query: 30, rows: 90, score: 170, winner: 260 };
 

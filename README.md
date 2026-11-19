@@ -1,30 +1,47 @@
-# FOTW Remotion kit
+# LanceDB motion kit
 
-The motion graphics for LanceDB's **Feature of the Week** videos, as plain
-[Remotion](https://www.remotion.dev) code: brand colors and fonts, the scene
-kits, the intro/outro, and every graphic from Ep. 07 (BM25F) as working
-examples.
+How LanceDB makes its explainer videos (Feature of the Week episodes, launch
+videos, 30-second social cuts, product tours) in
+[Remotion](https://www.remotion.dev): a written method, the kits that define
+the look, a voiceover-to-cues tool, and five shipped videos as working examples.
 
 ![Rank machine](docs/stills/rank-machine.png)
 
+## The guide
+
+Start here: **[`.claude/skills/lancedb-motion/SKILL.md`](.claude/skills/lancedb-motion/SKILL.md)**.
+It's written as a Claude Code skill (open Claude Code in this folder and it's
+picked up automatically), and it reads fine as a human guide too.
+
+| step | read |
+|---|---|
+| 1. get the facts (PR, code, numbers) | [fact-checking](.claude/skills/lancedb-motion/references/fact-checking.md) |
+| 2. plan one picture per VO line, one world | [planning](.claude/skills/lancedb-motion/references/planning.md), [recipes](.claude/skills/lancedb-motion/references/recipes.md) |
+| 3. time it to the voiceover | [timing-and-cues](.claude/skills/lancedb-motion/references/timing-and-cues.md) |
+| 4. build with the kit, in the house style | [kit-reference](.claude/skills/lancedb-motion/references/kit-reference.md), [visual-language](.claude/skills/lancedb-motion/references/visual-language.md) |
+| 5. assemble for the format (FOTW, launch, social 16:9/9:16, tour) | [formats](.claude/skills/lancedb-motion/references/formats.md) |
+| 6. QA, render, hand off | [qa-and-render](.claude/skills/lancedb-motion/references/qa-and-render.md) |
+| 7. sound | [sound](.claude/skills/lancedb-motion/references/sound.md), [`docs/SFX-GUIDE.md`](docs/SFX-GUIDE.md) |
+
+## Evals
+
+[`evals/`](evals/README.md) checks whether the guide works: an agent builds scenes from
+a voiceover line (with and without the guide), and each scene is scored on
+whether it builds, follows the house rules, looks right, and tells the script.
+
 ## Start
+
+Needs Node 18+, plus `ffmpeg` and [`uv`](https://docs.astral.sh/uv/) for the cue tool.
 
 ```bash
 npm i
 npm run dev          # Remotion Studio: scrub every composition
-```
-
-Render:
-
-```bash
 npx remotion render StarterScene out/starter.mp4
 npx remotion still Ep07-RankMachine out/rank.png --frame=700
-```
 
-If you use Claude Code, open it in this folder. The skill in
-`.claude/skills/fotw-animations/SKILL.md` gives it the show's rules (colors,
-type, motion, transitions, fact-checking, sound). It's also the best
-human-readable style guide, so read it.
+uv run tools/vo_cues.py transcribe vo.wav --out vo.words.json   # VO → word timings
+uv run tools/vo_cues.py cues vo.words.json cuespec.json --out src/cues.ts
+```
 
 ## What's where (`src/`)
 
@@ -42,6 +59,7 @@ human-readable style guide, so read it.
 | `NameCard`, `ContribIdent`, `CaptionLine`, `GlitchGrade` | host name cards, contributor idents, captions, seams |
 | `stickerKit`, `gagKit`, `Confetti`, `*Gag.tsx` | the sticker/stamp gags |
 | `diagramKit`, `readKit`, `ftsKit`, `PrPage3D` | older three.js kits. Only the PR page still uses one. |
+| `../tools/vo_cues.py` | voiceover → word timestamps → `cues.ts` (see timing-and-cues) |
 | `kinoCompat.d.ts` | types for two attributes the files carry from the editor they were built in; harmless |
 
 ## Other LanceDB videos (`src/examples/`)

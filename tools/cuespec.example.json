@@ -1,0 +1,17 @@
+{
+  "fps": 60,
+  "lead": 6,
+  "tail": 30,
+  "scenes": {
+    "rank": {
+      "start": "Lance's",
+      "end": "things",
+      "words": { "bm25": "BM25", "big": "big", "elephant": "elephant", "gives": "gives", "three": "three" }
+    },
+    "often": {
+      "start": "First",
+      "end": "once",
+      "words": { "often": "often", "five": "five", "higher": "higher" }
+    }
+  }
+}
