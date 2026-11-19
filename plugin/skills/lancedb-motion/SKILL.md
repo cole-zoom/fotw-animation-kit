@@ -15,6 +15,14 @@ of the voiceover, using real data and real code.
 camera, transitions, grade) already exists as code. Build from the kits and
 copy patterns from the examples.
 
+**Work inside the kit repo.** Every path in this guide (`src/boldKit.tsx`,
+`src/examples/`, `tools/vo_cues.py`, `evals/check-scene.sh`) is relative to
+<https://github.com/cole-zoom/fotw-animation-kit>. If the current folder doesn't
+have `src/boldKit.tsx`, don't rebuild the kits from memory: ask where the user's
+copy is, or clone it
+(`git clone https://github.com/cole-zoom/fotw-animation-kit.git && cd fotw-animation-kit && npm i`)
+and work there.
+
 ## The workflow
 
 Follow these steps in order. Each links to the reference that covers it.

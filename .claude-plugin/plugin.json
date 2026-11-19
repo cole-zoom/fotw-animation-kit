@@ -2,6 +2,6 @@
   "name": "lancedb-motion",
   "version": "0.1.0",
   "description": "How LanceDB makes its explainer motion graphics in Remotion: method, kits, examples.",
-  "skills": "./.claude/skills/",
+  "skills": "./plugin/skills/",
   "experimental": { "evals": "evals" }
 }

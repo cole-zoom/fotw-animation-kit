@@ -1,0 +1,6 @@
+{
+  "name": "lancedb-motion",
+  "version": "0.1.0",
+  "description": "How LanceDB makes its explainer motion graphics (FOTW, launches, social cuts, tours) in Remotion. Builds on the kits in github.com/cole-zoom/fotw-animation-kit.",
+  "repository": "https://github.com/cole-zoom/fotw-animation-kit"
+}

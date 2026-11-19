@@ -4,11 +4,11 @@
 # possible so it's instant and the run can't touch the original.
 set -e
 REPO="$(cd "$(dirname "$0")/../.." && pwd)"
-# .claude/ (the skill) is NOT copied: the eval runner loads it as the plugin under
+# .claude/ and plugin/ (the skill) are NOT copied: the eval runner loads it as the plugin under
 # test in the "with" arm, so the "without" arm really runs without the guide.
 for item in "$REPO"/*; do
   name="$(basename "$item")"
-  case "$name" in out|evals) continue ;; esac
+  case "$name" in out|evals|plugin) continue ;; esac
   cp -cR "$item" . 2>/dev/null || cp -R "$item" .
 done
 mkdir -p evals out

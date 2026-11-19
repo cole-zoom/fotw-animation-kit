@@ -9,19 +9,27 @@ the look, a voiceover-to-cues tool, and five shipped videos as working examples.
 
 ## The guide
 
-Start here: **[`.claude/skills/lancedb-motion/SKILL.md`](.claude/skills/lancedb-motion/SKILL.md)**.
+Start here: **[`plugin/skills/lancedb-motion/SKILL.md`](plugin/skills/lancedb-motion/SKILL.md)**.
 It's written as a Claude Code skill (open Claude Code in this folder and it's
 picked up automatically), and it reads fine as a human guide too.
 
+To have the guide in Claude Code everywhere (it'll clone this repo when it
+needs the kits):
+
+```
+/plugin marketplace add cole-zoom/fotw-animation-kit
+/plugin install lancedb-motion@fotw-animation-kit
+```
+
 | step | read |
 |---|---|
-| 1. get the facts (PR, code, numbers) | [fact-checking](.claude/skills/lancedb-motion/references/fact-checking.md) |
-| 2. plan one picture per VO line, one world | [planning](.claude/skills/lancedb-motion/references/planning.md), [recipes](.claude/skills/lancedb-motion/references/recipes.md) |
-| 3. time it to the voiceover | [timing-and-cues](.claude/skills/lancedb-motion/references/timing-and-cues.md) |
-| 4. build with the kit, in the house style | [kit-reference](.claude/skills/lancedb-motion/references/kit-reference.md), [visual-language](.claude/skills/lancedb-motion/references/visual-language.md) |
-| 5. assemble for the format (FOTW, launch, social 16:9/9:16, tour) | [formats](.claude/skills/lancedb-motion/references/formats.md) |
-| 6. QA, render, hand off | [qa-and-render](.claude/skills/lancedb-motion/references/qa-and-render.md) |
-| 7. sound | [sound](.claude/skills/lancedb-motion/references/sound.md), [`docs/SFX-GUIDE.md`](docs/SFX-GUIDE.md) |
+| 1. get the facts (PR, code, numbers) | [fact-checking](plugin/skills/lancedb-motion/references/fact-checking.md) |
+| 2. plan one picture per VO line, one world | [planning](plugin/skills/lancedb-motion/references/planning.md), [recipes](plugin/skills/lancedb-motion/references/recipes.md) |
+| 3. time it to the voiceover | [timing-and-cues](plugin/skills/lancedb-motion/references/timing-and-cues.md) |
+| 4. build with the kit, in the house style | [kit-reference](plugin/skills/lancedb-motion/references/kit-reference.md), [visual-language](plugin/skills/lancedb-motion/references/visual-language.md) |
+| 5. assemble for the format (FOTW, launch, social 16:9/9:16, tour) | [formats](plugin/skills/lancedb-motion/references/formats.md) |
+| 6. QA, render, hand off | [qa-and-render](plugin/skills/lancedb-motion/references/qa-and-render.md) |
+| 7. sound | [sound](plugin/skills/lancedb-motion/references/sound.md), [`docs/SFX-GUIDE.md`](docs/SFX-GUIDE.md) |
 
 ## Evals
 

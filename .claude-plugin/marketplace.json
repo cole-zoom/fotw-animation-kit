@@ -1,0 +1,12 @@
+{
+  "name": "fotw-animation-kit",
+  "owner": { "name": "cole-zoom" },
+  "description": "LanceDB motion graphics: the guide for making FOTW-style explainer videos in Remotion.",
+  "plugins": [
+    {
+      "name": "lancedb-motion",
+      "source": "./plugin",
+      "description": "How LanceDB makes its explainer motion graphics in Remotion: method, kits, examples."
+    }
+  ]
+}

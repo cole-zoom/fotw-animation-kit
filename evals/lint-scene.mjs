@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Static checks of a scene file against the house rules in
-// .claude/skills/lancedb-motion (no deps; Node 18+).
+// plugin/skills/lancedb-motion (no deps; Node 18+).
 //
 //   node evals/lint-scene.mjs src/MyScene.tsx [--json]
 //
